@@ -1,5 +1,5 @@
 
-let currentTasks=0;
+var currentTasks=0;
 //List of the buttons to delete an element
 var deleteElements = document.getElementsByClassName("delete");
 var i;
