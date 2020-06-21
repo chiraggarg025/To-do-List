@@ -24,11 +24,14 @@ body{
     border: none;
     
 }
+#input-container:hover{
+    background-color: rgba(182, 176, 176, 0.548);
+}
 #input{
     width: auto;
     border: none;
     font-size: inherit;
-    background-color: rgb(229, 226, 226);
+    background-color:inherit;
 }
 #input :checked{
     border: none;
@@ -68,9 +71,11 @@ body{
     width: 100%;
     margin-top: 1%;
 }
-#list li i{
+.delete {
     float: right;
     margin-right: 7%;
+    font-size: 1.5rem;
+    padding: 1%;
     color: black !important;
     /* display: none; */
 }
@@ -82,6 +87,7 @@ body{
 
 .delete:hover{
     background-color: rgb(223, 86, 86);
+  
 }
 
 #list li.checked{

@@ -12,18 +12,18 @@
         
         <i class="fa fa-file-text-o" aria-hidden="true" ></i>
         <input type="text" id="input"placeholder=" Type your to do list ..." ic>
-        <i class="fa fa-plus " id="add" aria-hidden="true"></i>
+        <i class="fa fa-plus " id="add" aria-hidden="true" onclick="addTask()"></i>
     </div>
     <!-- Buttons for complete and clear -->
     <div id="clear-complete">
         
-        <span id="complete-all"><i class="fa fa-check-square-o" aria-hidden="true"></i> Complete All task</span>
-        <span id="clear-all"> Clear completed</span>
+        <span id="complete-all" onclick="completeAll()"><i class="fa fa-check-square-o" aria-hidden="true"></i> Complete All task</span>
+        <span id="clear-all" onclick="clearCompleted()"> Clear completed</span>
     </div>
     <hr>
     <div id="all-task">
                 <ul id="list">
-                    <div>
+                    <!-- <div>
                         <li>
                             Gym
                             <i class="fa fa-times delete" aria-hidden="true" ></i>
@@ -38,7 +38,7 @@
                     <li>
                         Listen to music
                         <i class="fa fa-times delete" aria-hidden="true" ></i>
-                    </li>
+                    </li> -->
                 </ul>
         
     </div>
@@ -46,17 +46,17 @@
     <!-- Last Section of info about tasks -->
     <!-- tasks left -->
     <div id="task-info">
-       <p ><span id="task-left">2</span> tasks left</p>
+       <p ><span id="task-left">0</span> tasks left</p>
     
     <!-- the type of tasks -->
         <ul id="task-type">
-            <li>
+            <li onclick="showAll()">
                 <strong style="color: rgb(148, 139, 139);">All</strong>
             </li>
-            <li>
+            <li onclick="showIncomplete()">
                 Incomplete
             </li>
-            <li>
+            <li onclick="showCompleted()">
                 Completed
             </li>
         </ul>
