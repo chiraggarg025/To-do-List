@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="box">
+    <!-- input section -->
+    <div id="input-container">
+        
+        <i class="fa fa-file-text-o" aria-hidden="true" ></i>
+        <input type="text" id="input"placeholder=" Type your to do list ..." ic>
+        <i class="fa fa-plus " id="add" aria-hidden="true"></i>
+    </div>
+    <!-- Buttons for complete and clear -->
+    <div id="clear-complete">
+        
+        <span id="complete-all"><i class="fa fa-check-square-o" aria-hidden="true"></i> Complete All task</span>
+        <span id="clear-all"> Clear completed</span>
+    </div>
+    <hr>
+    <div id="all-task">
+                <ul id="list">
+                    <div>
+                        <li>
+                            Gym
+                            <i class="fa fa-times delete" aria-hidden="true" ></i>
+    
+                        </li>
+                    </div>
+                    
+                    <li class="checked">
+                        Project
+                        <i class="fa fa-times delete" aria-hidden="true" ></i>
+                    </li>
+                    <li>
+                        Listen to music
+                        <i class="fa fa-times delete" aria-hidden="true" ></i>
+                    </li>
+                </ul>
+        
+    </div>
+    <hr>
+    <!-- Last Section of info about tasks -->
+    <!-- tasks left -->
+    <div id="task-info">
+       <p ><span id="task-left">2</span> tasks left</p>
+    
+    <!-- the type of tasks -->
+        <ul id="task-type">
+            <li>
+                <strong style="color: rgb(148, 139, 139);">All</strong>
+            </li>
+            <li>
+                Incomplete
+            </li>
+            <li>
+                Completed
+            </li>
+        </ul>
+    </div>    
+</div>
+
+
+
+
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
