@@ -1,7 +1,19 @@
-// Function to add a Task
+
 let currentTasks=0;
-refreshList();
-// Helipng in adding a task
+//List of the buttons to delete an element
+var deleteElements = document.getElementsByClassName("delete");
+var i;
+for (i = 0; i < deleteElements.length; i++) {
+    deleteElements[i].onclick = function() {
+        currentTasks--;
+        document.getElementById('task-left').innerText=currentTasks;
+        document
+        var parent = this.parentElement;
+        parent.style.display = "none";
+        
+    }
+}
+// Helping in adding a task
 function addTask(){
     var li=document.createElement("li");
     var task =document.getElementById('input').value;
@@ -10,7 +22,6 @@ function addTask(){
     i.classList.add('delete');
     i.classList.add('fa');
     i.classList.add('fa-times');
-    list[list.length]=i;
     li.appendChild(item);
     li.appendChild(i);
     if(li.innerText==""){
@@ -18,54 +29,33 @@ function addTask(){
     }else{
         document.getElementById('list').appendChild(li);
         currentTasks++;
+        document.getElementById('task-left').innerText=currentTasks;
     }
     document.getElementById('input').value="";
     
-    document.getElementById('task-left').innerText=currentTasks;
-    refreshList();
-    // document.getElementById('list').appendChild(i);
     
+
+    //List of the buttons to delete an element
+    for (i = 0; i < deleteElements.length; i++) {
+        deleteElements[i].onclick = function() {
+            var parent = this.parentElement;
+            parent.style.display = "none";
+            currentTasks--;
+            document.getElementById('task-left').innerText=currentTasks;
+        }
+    }
 }
 
-// Function to refresh the list of tasks after adding a task
-
-    function refreshList(){
-        var list = document.getElementsByClassName('delete');
-        for(let i=0;i<list.length;i++){
-            list[i].addEventListener('click',function(){    
-                if(tasks[i].style.display!='none')
-                    currentTasks--;        
-                list[i].parentElement.style.display='none';
-                
-                document.getElementById('task-left').innerText=currentTasks;
-            });
-        }
-        var tasks = document.querySelectorAll('#list li');
-        for(let i=0;i<tasks.length;i++){
-            tasks[i].addEventListener('click',function(){
-                if(tasks[i].className!='checked'){
-                    tasks[i].classList.add('checked');
-                    
-                }else{
-                    tasks[i].classList.remove('checked');
-                }
-                
-            })
-        }
        
-    }   
-    var tasks = document.querySelectorAll('#list li');
-        for(let i=0;i<tasks.length;i++){
-            tasks[i].addEventListener('click',function(){
-                if(tasks[i].className!='checked'){
-                    tasks[i].classList.add('checked');
-                    
-                }else{
-                    tasks[i].classList.remove('checked');
-                }
-                
-            })
+
+    //Marking a list item as done for current object
+        var list = document.querySelector('#list');
+        list.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            event.target.classList.toggle('checked');
         }
+        }, false);
+
     // Marking all tasks complete
 function completeAll(){
     var tasks = document.querySelectorAll('#list li');
@@ -80,17 +70,18 @@ function clearCompleted(){
 
     var tasks = document.querySelectorAll('#list li');
         for(let i=0;i<tasks.length;i++){
-                if(tasks[i].className=='checked'){
-                    if(tasks[i].style.display!='none')
-                    currentTasks--;
-                    tasks[i].style.display='none';
+                if(tasks[i].className=='checked' && tasks[i].style.display!='none'){
+                    console.log(tasks[i].style.display!="none");
+                    
+                        currentTasks--; 
+                        document.getElementById('task-left').innerText=currentTasks;
+                    
+                        tasks[i].style.display='none';
                     
                 }
                 
         }
-        currentTasks=1;
-        document.getElementById('task-left').innerText=currentTasks;
-    refreshList();
+        
 }
 
 // function to show incomplete tasks

@@ -77,6 +77,7 @@ body{
     font-size: 1.5rem;
     padding: 1%;
     color: black !important;
+
     /* display: none; */
 }
 #list li:hover{
@@ -87,7 +88,7 @@ body{
 
 .delete:hover{
     background-color: rgb(223, 86, 86);
-  
+    z-index: 1;
 }
 
 #list li.checked{
