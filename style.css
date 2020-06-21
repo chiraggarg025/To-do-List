@@ -113,3 +113,26 @@ display: inline;
     display: inline;
     cursor: pointer;
 }
+@media screen and (max-width: 600px) {
+    #box{
+        height: auto;
+        width: auto;
+    }
+    #input-container #file{
+        display: none;
+    }
+    #input-container{
+        /* max-width: inherit; */
+        font-size: 1rem;
+    }
+    #clear-all{
+        /* display: block; */
+    }
+    #complete-all{
+        /* display: block; */
+        float: none;
+    }
+    hr{
+        display: block;
+    }
+  }
