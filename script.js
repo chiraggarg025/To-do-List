@@ -14,6 +14,12 @@ for (i = 0; i < deleteElements.length; i++) {
     }
 }
 // Helping in adding a task
+document.getElementById('input').addEventListener('keyup',function(event){
+    if(event.keyCode==13){
+        event.preventDefault();
+        addTask();
+    }
+})
 function addTask(){
     var li=document.createElement("li");
     var task =document.getElementById('input').value;
