@@ -80,13 +80,14 @@ function clearCompleted(){
                     console.log(tasks[i].style.display!="none");
                     
                         currentTasks--; 
-                        document.getElementById('task-left').innerText=currentTasks;
+                        
                     
                         tasks[i].style.display='none';
                     
                 }
                 
         }
+        document.getElementById('task-left').innerText=currentTasks;
         
 }
 
@@ -96,7 +97,7 @@ function showIncomplete(){
     for(let i=0;i<tasks.length;i++){
         if(tasks[i].className=='checked'){
             tasks[i].style.visibility='hidden';
-            currentTasks--;
+           
         }else{
             tasks[i].style.visibility='visible';
         }
@@ -109,7 +110,7 @@ function showCompleted(){
     for(let i=0;i<tasks.length;i++){
         if(tasks[i].className!='checked'){
             tasks[i].style.visibility='hidden';
-            currentTasks--;
+
         }else{
             tasks[i].style.visibility='visible';
         }
